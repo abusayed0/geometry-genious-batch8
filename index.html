@@ -1,0 +1,216 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genious</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="mx-w-[1920px] my-10 px-2 md:px-8 lg:px-16">
+    <header>
+
+    </header>
+    <main>
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- triangle card  -->
+                <div class="border-2 p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/triangle.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Triangle</h3>
+                            <p>Area equation = 0.5 x b x h</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="b" type="text"
+                                        name="" id="triangle-base">
+                                    <label for="triangle-base">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="h" type="text" name=""
+                                        id="triangle-height">
+                                    <label for="triangle-height">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="triangle-area" class="font-semibold">0.00</span>
+                                cm<sup>2</sup></h3>
+                            <button onclick="calculateTriangleArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- rectangle card  -->
+                <div class="border-2  p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/rectangle.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Rectangle</h3>
+                            <p>Area equation = w x l</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="w" type="text"
+                                        name="" id="rectangle-width">
+                                    <label for="rectangle-width">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="l" type="text" name=""
+                                        id="rectangle-length">
+                                    <label for="rectangle-length">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="rectangle-area" class="font-semibold">0.00</span>
+                                cm<sup>2</sup></h3>
+                            <button onclick="calculateRectangleArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- parallelogram card  -->
+                <div class="border-2 p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/parallelogram.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Parallelogram</h3>
+                            <p>Area equation = b x h</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="b" type="text"
+                                        name="" id="parallelogram-base">
+                                    <label for="parallelogram-base">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="h" type="text" name=""
+                                        id="parallelogram-height">
+                                    <label for="parallelogram-height">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="parallelogram-area"
+                                    class="font-semibold">0.00</span> cm<sup>2</sup></h3>
+                            <button onclick="calculateParallelogramArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- rhombus card  -->
+                <div class="border-2  p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/rhombus.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Rhombus</h3>
+                            <p>Area equation = 0.5 x d1 x d2</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="b" type="text"
+                                        name="" id="rhombus-d1">
+                                    <label for="rhombus-d1">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="h" type="text" name=""
+                                        id="rhombus-d2">
+                                    <label for="rhombus-d2">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="rhombus-area" class="font-semibold">0.00</span>
+                                cm<sup>2</sup></h3>
+                            <button onclick="calculateRhombusArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- pentagon card  -->
+                <div class="border-2  p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/pentagon.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Pentagon</h3>
+                            <p>Area equation = 0.5 x p x a</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="p" type="text"
+                                        name="" id="pentagon-perimeter">
+                                    <label for="pentagon-perimeter">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="a" type="text" name=""
+                                        id="pentagon-apothem">
+                                    <label for="pentagon-apothem">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="pentagon-area" class="font-semibold">0.00</span>
+                                cm<sup>2</sup></h3>
+                            <button onclick="calculatePentagonArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- ellipse card  -->
+                <div class="border-2  p-6 rounded-lg">
+                    <div class="px-6">
+                        <img class="w-full h-[200px] object-contain" src="images/ellipse.png" alt="">
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col gap-2 items-center">
+                            <h3 class="text-2xl font-bold">Ellipse</h3>
+                            <p>Area equation = π x a x b</p>
+                        </div>
+                        <form autocomplete="off" class="mt-3 mb-0">
+                            <div class="flex gap-5">
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 border-2  w-full rounded bg-[#F1F1F1]" placeholder="a" type="text"
+                                        name="" id="ellipse-a-axis">
+                                    <label for="ellipse-a-axis">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input class="p-1 w-full rounded bg-[#F1F1F1]" placeholder="b" type="text" name=""
+                                        id="ellipse-b-axis">
+                                    <label for="ellipse-b-axis">cm</label>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-center">Area = <span id="ellipse-area" class="font-semibold">0.00</span>
+                                cm<sup>2</sup></h3>
+                            <button onclick="calculateEllipseArea(event)"
+                                class="mt-6 bg-teal-600 w-full py-2 rounded-lg text-white text-xl font-medium">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- area calculation  -->
+            <div>
+                <div class="border-2 rounded-lg p-6 min-h-[300px]">
+                    <h2 class="text-2xl text-center font-semibold underline">Area Calculation</h2>
+                    <ol class="mt-5 list-decimal list-inside flex flex-col gap-3 text-xl" id="calculation-enter">
+        
+
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <script src="scripts/utilities.js"></script>
+    <script src="scripts/area-calculation.js"></script>
+</body>
+
+</html>
